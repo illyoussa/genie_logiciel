@@ -24,4 +24,3 @@ public class GlobalTest {
         verify(Affichage.afficherJoueur(player));
     }
 }
-git

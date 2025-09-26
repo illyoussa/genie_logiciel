@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="re.forestier.edu.UnitTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-09-12T10:14:36" hostname="a206pc17L.local.isima.fr" time="0.018">
+<testsuite name="re.forestier.edu.UnitTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-09-26T12:28:54" hostname="a206pc14L.local.isima.fr" time="0.023">
   <properties/>
-  <testcase name="Good Amount of money after removing some" classname="re.forestier.edu.UnitTests" time="0.009"/>
-  <testcase name="Good Amount of money after adding some" classname="re.forestier.edu.UnitTests" time="0.002"/>
-  <testcase name="Good Amount of money after adding zero" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify XP addition" classname="re.forestier.edu.UnitTests" time="0.013"/>
+  <testcase name="Good Amount of money after adding and removing some" classname="re.forestier.edu.UnitTests" time="0.0"/>
+  <testcase name="Verify end of turn update" classname="re.forestier.edu.UnitTests" time="0.005"/>
+  <testcase name="Good Amount of money after adding and removing zero" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify all player class" classname="re.forestier.edu.UnitTests" time="0.001"/>
   <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.001"/>
-  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.0"/>
+  <system-out><![CDATA[Current health after update: 41
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

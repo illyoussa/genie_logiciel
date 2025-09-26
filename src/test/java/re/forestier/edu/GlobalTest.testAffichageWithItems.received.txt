@@ -8,7 +8,7 @@ Capacités :
    INT : 2
 
 Inventaire :
-   Draupnir : Increases XP gained by 100%
-   Hache de guerre
-   Potion de soin
-   Armure de cuir
+   Scroll of Stupidity : INT-2 when applied to an enemy
+   Sword
+   Shield
+   Health Potion

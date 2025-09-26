@@ -1,11 +1,14 @@
 package re.forestier.edu;
 
 import org.junit.jupiter.api.*;
+
+import re.forestier.edu.rpg.UpdatePlayer;
 import re.forestier.edu.rpg.player;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 
 public class UnitTests {
@@ -30,26 +33,51 @@ public class UnitTests {
     }
 
     @Test
-    @DisplayName("Good Amount of money after removing some")
-    void testRemoveMoney() {
-        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
-        p.removeMoney(50);
-        assertThat(p.money, is(50));
-    }
-    
-    @Test
-    @DisplayName("Good Amount of money after adding some")
-    void testAddMoney() {
+    @DisplayName("Good Amount of money after adding and removing some")
+    void testAddRemoveMoney() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         p.addMoney(50);
         assertThat(p.money, is(150));
+        p.removeMoney(100);
+        assertThat(p.money, is(50));
     }
 
     @Test
-    @DisplayName("Good Amount of money after adding zero")
-    void testAddZeroMoney() {
+    @DisplayName("Good Amount of money after adding and removing zero")
+    void testAddRemoveZeroMoney() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         p.addMoney(0);
         assertThat(p.money, is(100));
+        p.removeMoney(0);
+        assertThat(p.money, is(100));
+    }
+
+    @Test
+    @DisplayName("Verify all player class")
+    void testPlayerClass() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p = new player("Florian", "Legolas", "ARCHER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ARCHER"));
+        p = new player("Florian", "Gimli", "DWARF", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("DWARF"));
+    }
+
+    @Test
+    @DisplayName("Verify XP addition")
+    void testAddXp() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        UpdatePlayer.addXp(p, 50);
+        assertThat(p.getXp(), is(50));
+    }
+    
+    @Test
+    @DisplayName("Verify end of turn update")
+    void testEndOfTurnUpdate() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+        System.out.println("Current health after update: " + p.currenthealthpoints);
     }
 }

@@ -4,12 +4,16 @@ import org.junit.jupiter.api.*;
 
 import re.forestier.edu.rpg.UpdatePlayer;
 import re.forestier.edu.rpg.player;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.beans.Transient;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class UnitTests {
 
@@ -78,6 +82,60 @@ public class UnitTests {
         p.healthpoints = 100;
         p.currenthealthpoints = 40;
         UpdatePlayer.majFinDeTour(p);
-        System.out.println("Current health after update: " + p.currenthealthpoints);
+        assertEquals(41, p.currenthealthpoints);
+
+        p = new player("Florian", "Legolas", "ARCHER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ARCHER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(41, p.currenthealthpoints);
+
+        p = new player("Florian", "Gimli", "DWARF", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("DWARF"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(41, p.currenthealthpoints);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 0;
+        UpdatePlayer.majFinDeTour(p);
+        
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 200;
+        UpdatePlayer.majFinDeTour(p);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 70;
+        UpdatePlayer.majFinDeTour(p);
+
+        p = new player("Florian", "Gimli", "DWARF", 100, new ArrayList<>(Arrays.asList("Holy Elixir")));
+        assertThat(p.getAvatarClass(), is("DWARF"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+
+        p = new player("Florian", "Legolas", "ARCHER", 100, new ArrayList<>(Arrays.asList("Magic Bow")));
+        assertThat(p.getAvatarClass(), is("ARCHER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+    }
+
+    @Test
+    @DisplayName("Verify level (New level = Current level) after adding XP")
+    void testLevelNoUp() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.retrieveLevel(), is(1));
+        UpdatePlayer.addXp(p, 1);
+        assertThat(p.retrieveLevel(), is(1));
     }
 }

@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id "jacoco"
-    id 'info.solidsoft.pitest' version '1.7.4'
+    id 'info.solidsoft.pitest' version '1.15.0'
 }
 
 group = 're.forestier.edu'
@@ -25,4 +25,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+pitest{
+    pitestVersion = '1.19.1'
+    junit5PluginVersion = '1.2.1'
+    targetClasses = ['re.forestier.edu.*']
 }

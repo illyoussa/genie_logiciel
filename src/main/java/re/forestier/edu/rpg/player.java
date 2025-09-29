@@ -49,21 +49,24 @@ public class player {
         money = money + (value != null ? value : 0);
     }
     public int retrieveLevel() {
-        // Calcul dynamique des paliers de niveaux
-        int maxLevel = 5; // Peut être augmenté si besoin
-        int[] thresholds = new int[maxLevel + 1];
-        thresholds[1] = 0;
-        for (int lvl = 2; lvl <= maxLevel; lvl++) {
-            int prevXp = thresholds[lvl - 1];
-            thresholds[lvl] = (lvl - 1) * 10 + Math.round((lvl * prevXp) / 4.0f);
-        }
+        // (lvl-1) * 10 + round((lvl * xplvl-1)/4)
+        HashMap<Integer, Integer> levels = new HashMap<>();
+        levels.put(2,10); // 1*10 + ((2*0)/4)
+        levels.put(3,27); // 2*10 + ((3*10)/4)
+        levels.put(4,57); // 3*10 + ((4*27)/4)
+        levels.put(5,111); // 4*10 + ((5*57)/4)
+        //TODO : ajouter les prochains niveaux
 
-        for (int lvl = maxLevel; lvl >= 2; lvl--) {
-            if (xp >= thresholds[lvl]) {
-                return lvl;
-            }
+        if (xp < levels.get(2)) {
+            return 1;
         }
-        return 1;
+        else if (xp < levels.get(3)) {return 2;
+        }
+        if (xp < levels.get(4)) {
+            return 3;
+        }
+        if (xp < levels.get(5)) return 4;
+        return 5;
     }
 
     public int getXp() {

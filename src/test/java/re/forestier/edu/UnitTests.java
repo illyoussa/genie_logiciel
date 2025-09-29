@@ -110,24 +110,58 @@ public class UnitTests {
         p.healthpoints = 100;
         p.currenthealthpoints = 200;
         UpdatePlayer.majFinDeTour(p);
+        assertEquals(100, p.currenthealthpoints);
 
         p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         assertThat(p.getAvatarClass(), is("ADVENTURER"));
         p.healthpoints = 100;
         p.currenthealthpoints = 70;
         UpdatePlayer.majFinDeTour(p);
+        assertEquals(70, p.currenthealthpoints);
 
         p = new player("Florian", "Gimli", "DWARF", 100, new ArrayList<>(Arrays.asList("Holy Elixir")));
         assertThat(p.getAvatarClass(), is("DWARF"));
         p.healthpoints = 100;
         p.currenthealthpoints = 40;
         UpdatePlayer.majFinDeTour(p);
+        assertEquals(42, p.currenthealthpoints);
 
         p = new player("Florian", "Legolas", "ARCHER", 100, new ArrayList<>(Arrays.asList("Magic Bow")));
         assertThat(p.getAvatarClass(), is("ARCHER"));
         p.healthpoints = 100;
         p.currenthealthpoints = 40;
         UpdatePlayer.majFinDeTour(p);
+        assertEquals(45, p.currenthealthpoints);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        UpdatePlayer.addXp(p, 500);
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(42, p.currenthealthpoints);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        UpdatePlayer.addXp(p, 27);
+        p.healthpoints = 100;
+        p.currenthealthpoints = 40;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(42, p.currenthealthpoints);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 50;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(50, p.currenthealthpoints);
+
+        p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.getAvatarClass(), is("ADVENTURER"));
+        p.healthpoints = 100;
+        p.currenthealthpoints = 100;
+        UpdatePlayer.majFinDeTour(p);
+        assertEquals(100, p.currenthealthpoints);
     }
 
     @Test
@@ -137,5 +171,20 @@ public class UnitTests {
         assertThat(p.retrieveLevel(), is(1));
         UpdatePlayer.addXp(p, 1);
         assertThat(p.retrieveLevel(), is(1));
+    }
+
+    @Test
+    @DisplayName("Verify level (New level > Current level) after adding XP")
+    void testLevelUp() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.retrieveLevel(), is(1));
+        UpdatePlayer.addXp(p, 20);
+        assertThat(p.retrieveLevel(), is(2));
+    }
+
+    @Test
+    @DisplayName("Other class")
+    void OtherClass() {
+        player p = new player("Maxou", "MaxMax", "DEMON", 100, new ArrayList<>());
     }
 }

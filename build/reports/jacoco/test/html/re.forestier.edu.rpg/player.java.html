@@ -60,17 +60,22 @@ public class player {
 <span class="fc bfc" id="L60" title="All 2 branches covered.">        if (xp &lt; levels.get(2)) {</span>
 <span class="fc" id="L61">            return 1;</span>
         }
-<span class="fc bfc" id="L63" title="All 2 branches covered.">        else if (xp &lt; levels.get(3)) {return 2;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        else if (xp &lt; levels.get(3)) {</span>
+<span class="fc" id="L64">            return 2;</span>
         }
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (xp &lt; levels.get(4)) {</span>
-<span class="fc" id="L66">            return 3;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        else if (xp &lt; levels.get(4)) {</span>
+<span class="fc" id="L67">            return 3;</span>
         }
-<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        if (xp &lt; levels.get(5)) return 4;</span>
-<span class="fc" id="L69">        return 5;</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        else if (xp &lt; levels.get(5)) {</span>
+<span class="fc" id="L70">        return 4;</span>
+        }
+        else {
+<span class="fc" id="L73">        return 5;</span>
+        }
     }
 
     public int getXp() {
-<span class="fc" id="L73">        return this.xp;</span>
+<span class="fc" id="L78">        return this.xp;</span>
     }
 
     /*

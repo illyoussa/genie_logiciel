@@ -108,7 +108,7 @@ public class UpdatePlayer {
             // Give a random object
             ;
             Random random = new Random();
-            player.inventory.add(objectList[random.nextInt(objectList.length - 0) + 0]);
+            player.inventory.add(objectList[random.nextInt(objectList.length)]);
 
             // Add/upgrade abilities to player
             HashMap<String, Integer> abilities = abilitiesPerTypeAndLevel().get(player.getAvatarClass()).get(newLevel);
@@ -128,39 +128,35 @@ public class UpdatePlayer {
         }
 
         if(player.currenthealthpoints < player.healthpoints/2) {
-            if(!player.getAvatarClass().equals("ADVENTURER")) {
-                if(player.getAvatarClass().equals("DWARF")) {
+            switch (player.getAvatarClass()) {
+                case "ADVENTURER":
+                    player.currenthealthpoints+=2;
+                    if(player.retrieveLevel() < 3) {
+                        player.currenthealthpoints-=1;
+                    }
+                    break;
+
+                case "DWARF":
+                    player.currenthealthpoints+=1;
                     if(player.inventory.contains("Holy Elixir")) {
                         player.currenthealthpoints+=1;
                     }
-                    player.currenthealthpoints+=1;
-                } else if(player.getAvatarClass().equals("ADVENTURER")) {
-                    player.currenthealthpoints+=2;
-                }
+                    break;
 
-
-                if(player.getAvatarClass().equals("ARCHER")) {
+                case "ARCHER":
                     player.currenthealthpoints+=1;
                     if(player.inventory.contains("Magic Bow")) {
                         player.currenthealthpoints+=player.currenthealthpoints/8-1;
                     }
-                }
-            } else {
-                player.currenthealthpoints+=2;
-                if(player.retrieveLevel() < 3) {
-                    player.currenthealthpoints-=1;
-                }
+                    break;
+            
+                default:
+                    break;
             }
-        } else if(player.currenthealthpoints >= player.healthpoints/2){
-            if(player.currenthealthpoints >= player.healthpoints) {
-                player.currenthealthpoints = player.healthpoints;
-                return;
-            }
-        }
 
-
-        if(player.currenthealthpoints >= player.healthpoints) {
+        } else if(player.currenthealthpoints >= player.healthpoints) {
             player.currenthealthpoints = player.healthpoints;
+            return;
         }
     }
 }

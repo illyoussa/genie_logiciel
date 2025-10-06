@@ -60,13 +60,18 @@ public class player {
         if (xp < levels.get(2)) {
             return 1;
         }
-        else if (xp < levels.get(3)) {return 2;
+        else if (xp < levels.get(3)) {
+            return 2;
         }
-        if (xp < levels.get(4)) {
+        else if (xp < levels.get(4)) {
             return 3;
         }
-        if (xp < levels.get(5)) return 4;
+        else if (xp < levels.get(5)) {
+        return 4;
+        }
+        else {
         return 5;
+        }
     }
 
     public int getXp() {

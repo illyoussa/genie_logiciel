@@ -583,18 +583,18 @@
 <a name='org.pitest.mutationtest.report.html.SourceFile@6f6745d6_41'/>
 41
 </td>
-<td class='survived'>
+<td class='killed'>
 <span class='pop'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_41'>3</a>
 <span>
-1. removeMoney : changed conditional boundary &rarr; SURVIVED<br/>
+1. removeMoney : changed conditional boundary &rarr; KILLED<br/>
 2. removeMoney : Replaced integer subtraction with addition &rarr; KILLED<br/>
 3. removeMoney : negated conditional &rarr; KILLED<br/>
 
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class='survived'>        if (money - amount &#60; 0) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        if (money - amount &#60; 0) {</span></pre></td></tr>
 
 <tr>
 <td class='covered'>
@@ -858,17 +858,17 @@
 <a name='org.pitest.mutationtest.report.html.SourceFile@6f6745d6_60'/>
 60
 </td>
-<td class='survived'>
+<td class='killed'>
 <span class='pop'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_60'>2</a>
 <span>
-1. retrieveLevel : changed conditional boundary &rarr; SURVIVED<br/>
+1. retrieveLevel : changed conditional boundary &rarr; KILLED<br/>
 2. retrieveLevel : negated conditional &rarr; KILLED<br/>
 
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class='survived'>        if (xp &#60; levels.get(2)) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        if (xp &#60; levels.get(2)) {</span></pre></td></tr>
 
 <tr>
 <td class='covered'>
@@ -937,17 +937,17 @@
 <a name='org.pitest.mutationtest.report.html.SourceFile@6f6745d6_65'/>
 65
 </td>
-<td class='survived'>
+<td class='killed'>
 <span class='pop'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_65'>2</a>
 <span>
-1. retrieveLevel : negated conditional &rarr; SURVIVED<br/>
-2. retrieveLevel : changed conditional boundary &rarr; SURVIVED<br/>
+1. retrieveLevel : negated conditional &rarr; KILLED<br/>
+2. retrieveLevel : changed conditional boundary &rarr; KILLED<br/>
 
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class='survived'>        if (xp &#60; levels.get(4)) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        if (xp &#60; levels.get(4)) {</span></pre></td></tr>
 
 <tr>
 <td class='covered'>
@@ -984,18 +984,18 @@
 <a name='org.pitest.mutationtest.report.html.SourceFile@6f6745d6_68'/>
 68
 </td>
-<td class='survived'>
+<td class='killed'>
 <span class='pop'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_68'>3</a>
 <span>
-1. retrieveLevel : negated conditional &rarr; SURVIVED<br/>
-2. retrieveLevel : changed conditional boundary &rarr; SURVIVED<br/>
-3. retrieveLevel : replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; NO_COVERAGE<br/>
+1. retrieveLevel : negated conditional &rarr; KILLED<br/>
+2. retrieveLevel : changed conditional boundary &rarr; KILLED<br/>
+3. retrieveLevel : replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED<br/>
 
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class='survived'>        if (xp &#60; levels.get(5)) return 4;</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        if (xp &#60; levels.get(5)) return 4;</span></pre></td></tr>
 
 <tr>
 <td class='covered'>
@@ -1302,13 +1302,8 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_41'/> 
 
-<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=removeMoney,-methodDesc=(I)V],-indexes=[8],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=removeMoney,-methodDesc=(I)V],-indexes=[8],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=removeMoney,-methodDesc=(I)V],-indexes=[8],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveMoney()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveZeroMoney()]</li> 
-</ul>
-</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testRemoveAllMoney()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
 </div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()]</span></span> negated conditional &rarr; KILLED</span>
 </div> 
 </td>
@@ -1320,7 +1315,7 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_45'/> 
 
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveMoney()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>removeMoney<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testRemoveAllMoney()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
 </div> 
 </td>
 </tr>
@@ -1343,13 +1338,8 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_60'/> 
 
-<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[53],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[53],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[53],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelNoUp()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXp()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelUp()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</li> <li>re.forestier.edu.GlobalTest.[engine:junit-jupiter]/[class:re.forestier.edu.GlobalTest]/[method:testAffichageBase()]</li> 
-</ul>
-</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelNoUp()]</span></span> negated conditional &rarr; KILLED</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXpWithInventory()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelNoUp()]</span></span> negated conditional &rarr; KILLED</span>
 </div> 
 </td>
 </tr>
@@ -1371,9 +1361,9 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_63'/> 
 
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelUp()]</span></span> negated conditional &rarr; KILLED</span>
-</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelUp()]</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED</span>
-</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</span></span> changed conditional boundary &rarr; KILLED</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXpWithInventory()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXpWithInventory()]</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> changed conditional boundary &rarr; KILLED</span>
 </div> 
 </td>
 </tr>
@@ -1384,19 +1374,9 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_65'/> 
 
-<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXp()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</li> 
-</ul>
-</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[83],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXp()]</li> <li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</li> 
-</ul>
-</div></div> 
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
 </td>
 </tr>
 <tr>
@@ -1417,19 +1397,9 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_68'/> 
 
-<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</li> 
-</ul>
-</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
-<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
-<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=re.forestier.edu.rpg.player,-method=retrieveLevel,-methodDesc=()I],-indexes=[99],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
-<ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</li> 
-</ul>
-</div></div> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>none</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; NO_COVERAGE</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED</span>
 </div> 
 </td>
 </tr>
@@ -1440,7 +1410,7 @@
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@6f6745d6_69'/> 
 
-<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()]</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED</span>
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>retrieveLevel<br/><b>Killed by : </b>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()]</span></span> replaced int return with 0 for re/forestier/edu/rpg/player::retrieveLevel &rarr; KILLED</span>
 </div> 
 </td>
 </tr>
@@ -1477,7 +1447,7 @@
 
 <h2>Tests examined</h2>
 <ul>
-<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXp()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()] (1 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:OtherClass()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testPlayerName()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testPlayerClass()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveZeroMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelNoUp()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelUp()] (0 ms)</li><li>re.forestier.edu.GlobalTest.[engine:junit-jupiter]/[class:re.forestier.edu.GlobalTest]/[method:testAffichageBase()] (17 ms)</li>
+<li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXp()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelUp()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAllLevels()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testEndOfTurnUpdate()] (1 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAbilitiesLevel1()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:OtherClass()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testPlayerName()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testRemoveAllMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testNegativeMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testPlayerClass()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveZeroMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddRemoveMoney()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testLevelNoUp()] (0 ms)</li><li>re.forestier.edu.UnitTests.[engine:junit-jupiter]/[class:re.forestier.edu.UnitTests]/[method:testAddXpWithInventory()] (0 ms)</li><li>re.forestier.edu.GlobalTest.[engine:junit-jupiter]/[class:re.forestier.edu.GlobalTest]/[method:testAffichageBase()] (16 ms)</li>
 </ul>
 
 <br/>

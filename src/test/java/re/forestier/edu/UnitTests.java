@@ -37,6 +37,14 @@ public class UnitTests {
     }
 
     @Test
+    @DisplayName("Remove all money")
+    void testRemoveAllMoney() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        p.removeMoney(100);
+        assertThat(p.money, is(0));
+    }
+
+    @Test
     @DisplayName("Good Amount of money after adding and removing some")
     void testAddRemoveMoney() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
@@ -68,7 +76,7 @@ public class UnitTests {
     }
 
     @Test
-    @DisplayName("Verify XP addition")
+    @DisplayName("Verify XP addition and remove")
     void testAddXp() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         UpdatePlayer.addXp(p, 50);
@@ -103,7 +111,7 @@ public class UnitTests {
         p.healthpoints = 100;
         p.currenthealthpoints = 0;
         UpdatePlayer.majFinDeTour(p);
-        
+        assertEquals(0, p.currenthealthpoints);
 
         p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         assertThat(p.getAvatarClass(), is("ADVENTURER"));
@@ -171,6 +179,7 @@ public class UnitTests {
         assertThat(p.retrieveLevel(), is(1));
         UpdatePlayer.addXp(p, 1);
         assertThat(p.retrieveLevel(), is(1));
+        assertThat(UpdatePlayer.addXp(p, 1), is(false));
     }
 
     @Test
@@ -180,11 +189,79 @@ public class UnitTests {
         assertThat(p.retrieveLevel(), is(1));
         UpdatePlayer.addXp(p, 20);
         assertThat(p.retrieveLevel(), is(2));
+        assertThat(UpdatePlayer.addXp(p, 20), is(true));
     }
 
     @Test
     @DisplayName("Other class")
     void OtherClass() {
         player p = new player("Maxou", "MaxMax", "DEMON", 100, new ArrayList<>());
+    }
+
+    @Test
+    @DisplayName("Verify all levels")
+    void testAllLevels() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.retrieveLevel(), is(1));
+        UpdatePlayer.addXp(p, 10);
+        assertThat(p.retrieveLevel(), is(2));
+        UpdatePlayer.addXp(p, 17);
+        assertThat(p.retrieveLevel(), is(3));
+        UpdatePlayer.addXp(p, 30);
+        assertThat(p.retrieveLevel(), is(4));
+        UpdatePlayer.addXp(p, 54);
+        assertThat(p.retrieveLevel(), is(5));
+    }
+
+    @Test
+    @DisplayName("Verify add xp with a inventory")
+    void testAddXpWithInventory() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>(Arrays.asList("Magic Bow")));
+        assertThat(p.retrieveLevel(), is(1));
+        UpdatePlayer.addXp(p, 10);
+        assertThat(p.retrieveLevel(), is(2));
+    }
+
+    @Test
+    @DisplayName("Verify abilities at ADVENTURER all levels")
+    void testAbilitiesLevel1() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.retrieveLevel(), is(1));
+        assertThat(p.abilities.get("INT"), is(1));
+        assertThat(p.abilities.get("DEF"), is(1));
+        assertThat(p.abilities.get("ATK"), is(3));
+        assertThat(p.abilities.get("CHA"), is(2));
+
+        UpdatePlayer.addXp(p, 10);
+        assertThat(p.retrieveLevel(), is(2));
+        assertThat(p.abilities.get("INT"), is(2));
+        assertThat(p.abilities.get("DEF"), is(1));
+        assertThat(p.abilities.get("ATK"), is(3));
+        assertThat(p.abilities.get("CHA"), is(3));
+
+        UpdatePlayer.addXp(p, 17);
+        assertThat(p.retrieveLevel(), is(3));
+        assertThat(p.abilities.get("INT"), is(2));
+        assertThat(p.abilities.get("DEF"), is(1));
+        assertThat(p.abilities.get("ATK"), is(5));
+        assertThat(p.abilities.get("CHA"), is(3));
+        assertThat(p.abilities.get("ALC"), is(1));
+
+        UpdatePlayer.addXp(p, 30);
+        assertThat(p.retrieveLevel(), is(4));
+        assertThat(p.abilities.get("INT"), is(2));
+        assertThat(p.abilities.get("DEF"), is(3));
+        assertThat(p.abilities.get("ATK"), is(5));
+        assertThat(p.abilities.get("CHA"), is(3));
+        assertThat(p.abilities.get("ALC"), is(1));
+
+        UpdatePlayer.addXp(p, 54);
+        assertThat(p.retrieveLevel(), is(5));
+        assertThat(p.abilities.get("INT"), is(2));
+        assertThat(p.abilities.get("DEF"), is(4));
+        assertThat(p.abilities.get("ATK"), is(5));
+        assertThat(p.abilities.get("CHA"), is(3));
+        assertThat(p.abilities.get("ALC"), is(1));
+        assertThat(p.abilities.get("VIS"), is(1));
     }
 }

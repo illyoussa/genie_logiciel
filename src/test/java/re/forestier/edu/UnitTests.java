@@ -14,6 +14,7 @@ import java.beans.Transient;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
 
 public class UnitTests {
 
@@ -224,7 +225,7 @@ public class UnitTests {
 
     @Test
     @DisplayName("Verify abilities at ADVENTURER all levels")
-    void testAbilitiesLevel1() {
+    void testAbilitiesLevelADVENTURER() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         assertThat(p.retrieveLevel(), is(1));
         assertThat(p.abilities.get("INT"), is(1));

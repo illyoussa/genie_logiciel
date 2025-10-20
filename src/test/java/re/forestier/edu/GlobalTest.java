@@ -20,10 +20,15 @@ public class GlobalTest {
     @Test
     void testAffichageBase() {
         player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
+        player.healthpoints = 100;
+        player.currenthealthpoints = 60;
+        
         UpdatePlayer.addXp(player, 20);
         player.inventory = new ArrayList<>();
 
         player.inventory.add("Épée en bois");
         assertThat(Affichage.afficherJoueur(player), containsString("Épée en bois"));
+
+        verify(Affichage.afficherJoueur(player));
     }
 }

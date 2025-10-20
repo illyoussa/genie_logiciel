@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="re.forestier.edu.UnitTests" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-10-06T07:59:04" hostname="a206pc10L.local.isima.fr" time="0.017">
+<testsuite name="re.forestier.edu.UnitTests" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-10-20T10:10:24" hostname="a206pc25L.local.isima.fr" time="0.018">
   <properties/>
   <testcase name="Verify XP addition and remove" classname="re.forestier.edu.UnitTests" time="0.002"/>
   <testcase name="Remove all money" classname="re.forestier.edu.UnitTests" time="0.001"/>
   <testcase name="Verify level (New level = Current level) after adding XP" classname="re.forestier.edu.UnitTests" time="0.001"/>
   <testcase name="Good Amount of money after adding and removing some" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <testcase name="Verify end of turn update" classname="re.forestier.edu.UnitTests" time="0.005"/>
-  <testcase name="Good Amount of money after adding and removing zero" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <testcase name="Verify level (New level &gt; Current level) after adding XP" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <testcase name="Verify all player class" classname="re.forestier.edu.UnitTests" time="0.0"/>
+  <testcase name="Verify end of turn update" classname="re.forestier.edu.UnitTests" time="0.004"/>
+  <testcase name="Good Amount of money after adding and removing zero" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify level (New level &gt; Current level) after adding XP" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify all player class" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify abilities at ADVENTURER all levels" classname="re.forestier.edu.UnitTests" time="0.001"/>
   <testcase name="Verify all levels" classname="re.forestier.edu.UnitTests" time="0.001"/>
-  <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <testcase name="Verify add xp with a inventory" classname="re.forestier.edu.UnitTests" time="0.001"/>
-  <testcase name="Verify abilities at ADVENTURER all levels" classname="re.forestier.edu.UnitTests" time="0.0"/>
+  <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Verify add xp with a inventory" classname="re.forestier.edu.UnitTests" time="0.0"/>
   <testcase name="Other class" classname="re.forestier.edu.UnitTests" time="0.0"/>
-  <system-out><![CDATA[Le joueur est KO !
+  <system-out><![CDATA[Félicitations, vous avez atteint le niveau 3 !
+Il a maintenant 41 points de vie.
+Il a maintenant 41 points de vie.
+Il a maintenant 41 points de vie.
+Le joueur est KO !
+Le joueur est en pleine forme !
+Le joueur utilise une Holy Elixir pour se soigner !
+Il a maintenant 42 points de vie.
+Le joueur utilise son Magic Bow pour se soigner !
+Il a maintenant 45 points de vie.
+Félicitations, vous avez atteint le niveau 5 !
+Il a maintenant 42 points de vie.
+Félicitations, vous avez atteint le niveau 3 !
+Il a maintenant 42 points de vie.
+Le joueur est en pleine forme !
+Félicitations, vous avez atteint le niveau 2 !
+Félicitations, vous avez atteint le niveau 3 !
+Félicitations, vous avez atteint le niveau 2 !
+Félicitations, vous avez atteint le niveau 3 !
+Félicitations, vous avez atteint le niveau 4 !
+Félicitations, vous avez atteint le niveau 5 !
+Félicitations, vous avez atteint le niveau 2 !
+Félicitations, vous avez atteint le niveau 3 !
+Félicitations, vous avez atteint le niveau 4 !
+Félicitations, vous avez atteint le niveau 5 !
+Félicitations, vous avez atteint le niveau 2 !
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[Classe d'avatar invalide !
+]]></system-err>
 </testsuite>

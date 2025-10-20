@@ -22,6 +22,7 @@ public class player {
     public ArrayList<String> inventory;
     public player(String playerName, String avatar_name, String avatarClass, int money, ArrayList<String> inventory) {
         if (!avatarClass.equals("ARCHER") && !avatarClass.equals("ADVENTURER") && !avatarClass.equals("DWARF") ) {
+            System.err.println("Classe d'avatar invalide !");
             return;
         }
 
@@ -31,6 +32,8 @@ public class player {
         this.money = Integer.valueOf(money);
         this.inventory = inventory;
         this.abilities = UpdatePlayer.abilitiesPerTypeAndLevel().get(AvatarClass).get(1);
+        this.level = 1;
+        this.xp = 0;
     }
 
     public String getAvatarClass () {
@@ -72,6 +75,7 @@ public class player {
         else {
         return 5;
         }
+
     }
 
     public int getXp() {

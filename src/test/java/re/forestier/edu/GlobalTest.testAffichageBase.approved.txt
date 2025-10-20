@@ -1,4 +1,7 @@
 Joueur Gnognak le Barbare joué par Florian
+Classe : ADVENTURER
+Argent : 200 pièces d'or
+Points de vie : 60/100
 Niveau : 2 (XP totale : 20)
 
 Capacités :
@@ -8,3 +11,4 @@ Capacités :
    INT : 2
 
 Inventaire :
+   Épée en bois

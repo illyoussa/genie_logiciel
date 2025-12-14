@@ -2,6 +2,7 @@ package re.forestier.edu;
 import re.forestier.edu.rpg.Affichage;
 import re.forestier.edu.rpg.UpdatePlayer;
 import re.forestier.edu.rpg.player;
+import re.forestier.edu.rpg.Item; 
 
 import java.util.ArrayList;
 

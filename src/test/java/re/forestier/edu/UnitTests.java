@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import re.forestier.edu.rpg.UpdatePlayer;
 import re.forestier.edu.rpg.player;
+import re.forestier.edu.rpg.Item;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -14,6 +15,7 @@ import java.beans.Transient;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
 
 public class UnitTests {
 
@@ -224,7 +226,7 @@ public class UnitTests {
 
     @Test
     @DisplayName("Verify abilities at ADVENTURER all levels")
-    void testAbilitiesLevel1() {
+    void testAbilitiesLevelADVENTURER() {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         assertThat(p.retrieveLevel(), is(1));
         assertThat(p.abilities.get("INT"), is(1));
@@ -263,5 +265,72 @@ public class UnitTests {
         assertThat(p.abilities.get("CHA"), is(3));
         assertThat(p.abilities.get("ALC"), is(1));
         assertThat(p.abilities.get("VIS"), is(1));
+    }
+
+    @Test
+    @DisplayName("Add + Remove item")
+    void testAddItemToInventoryUpdatesWeight() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        assertThat(p.totalweight, is(0));
+        p.addItemToInventory("Combat Edge");
+        assertThat(p.totalweight, is(2.0));
+        p.removeItemFromInventory("Combat Edge");
+        assertThat(p.totalweight, is(0));
+    }
+
+    @Test
+    @DisplayName("Buy and Sell item")
+    void testBuySellItemUpdatesWeight() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 1000, new ArrayList<>());
+        assertThat(p.totalweight, is(0));
+        assertThat(p.money, is(1000));
+        p.BuyItem(Item.ITEMS.get("Combat Edge"), 2);
+        assertThat(p.totalweight, is(4.0));
+        assertThat(p.money, is(784));
+        p.SellItem(Item.ITEMS.get("Combat Edge"), 2);
+        assertThat(p.totalweight, is(0));
+        assertThat(p.money, is(964));
+    }
+
+    @Test
+    @DisplayName("Set new weight limit")
+    void testSetNewWeightLimit() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 1000, new ArrayList<>());
+        p.totalweight = 7;
+
+        assertThat(p.weightlimit, is(10));
+        p.SetNewWeightLimit(15);
+        assertThat(p.weightlimit, is(15));
+        p.SetNewWeightLimit(5);
+        assertThat(p.weightlimit, is(15));
+        p.SetNewWeightLimit(-1);
+        assertThat(p.weightlimit, is(15));
+    }
+
+    @Test
+    @DisplayName("Verify inventory weight limit")
+    void testVerifyInventoryWeightLimit() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 1000, new ArrayList<>());
+        assertThat(p.totalweight, is(0));
+        assertThat(p.weightlimit, is(10));
+
+        assertThat(p.VerifyInventoryWeightLimit("Combat Edge"), is(true));
+        assertThat(p.totalweight, is(2.0));
+
+        p.totalweight = 9;
+        assertThat(p.VerifyInventoryWeightLimit("Combat Edge"), is(false));
+        assertThat(p.totalweight, is(9.0));
+
+        assertThat(p.VerifyInventoryWeightLimit("Holy Elixir"), is(true));
+        assertThat(p.totalweight, is(9.3));
+    }
+
+    @Test
+    @DisplayName("Add unknown item to inventory")
+    void testAddUnknownItemToInventory() {
+        player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 1000, new ArrayList<>());
+        assertThat(p.totalweight, is(0));
+        p.addItemToInventory("Unknown Item");
+        assertThat(p.totalweight, is(0));
     }
 }

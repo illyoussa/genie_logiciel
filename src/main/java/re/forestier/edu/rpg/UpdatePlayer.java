@@ -95,6 +95,34 @@ public class UpdatePlayer {
 
         abilitiesPerTypeAndLevel.put("DWARF", dwarf);
 
+        HashMap<Integer, HashMap<String, Integer>> goblin = new HashMap<>();
+
+        HashMap<String, Integer> goblinLevel1 = new HashMap<>();
+        goblinLevel1.put("INT", 2);
+        goblinLevel1.put("ATK", 2);
+        goblinLevel1.put("ALC", 1);
+        goblin.put(1, goblinLevel1);
+
+        HashMap<String, Integer> goblinLevel2 = new HashMap<>();
+        goblinLevel2.put("ATK", 3);
+        goblinLevel2.put("ALC", 4);
+        goblin.put(2, goblinLevel2);
+
+        HashMap<String, Integer> goblinLevel3 = new HashMap<>();
+        goblinLevel3.put("VIS", 1);
+        goblin.put(3, goblinLevel3);
+
+        HashMap<String, Integer> goblinLevel4 = new HashMap<>();
+        goblinLevel4.put("DEF", 1);
+        goblin.put(4, goblinLevel4);
+
+        HashMap<String, Integer> goblinLevel5 = new HashMap<>();
+        goblinLevel5.put("DEF", 2);
+        goblinLevel5.put("ATK", 3);
+        goblin.put(5, goblinLevel5);
+
+        abilitiesPerTypeAndLevel.put("GOBLIN", goblin);
+        
         return abilitiesPerTypeAndLevel;
     }
 
@@ -104,13 +132,10 @@ public class UpdatePlayer {
         int newLevel = player.retrieveLevel();
 
         if (newLevel != currentLevel) {
-            // Player leveled-up!
-            // Give a random object
             ;
-            Random random = new Random();
-            player.inventory.add(objectList[random.nextInt(objectList.length)]);
+            System.out.println("Félicitations, vous avez atteint le niveau " + newLevel + " !");
 
-            // Add/upgrade abilities to player
+            // Ajout/amélioration des capacités
             HashMap<String, Integer> abilities = abilitiesPerTypeAndLevel().get(player.getAvatarClass()).get(newLevel);
             abilities.forEach((ability, level) -> {
                 player.abilities.put(ability, abilities.get(ability));
@@ -140,6 +165,8 @@ public class UpdatePlayer {
                     player.currenthealthpoints+=1;
                     if(player.inventory.contains("Holy Elixir")) {
                         player.currenthealthpoints+=1;
+                        System.out.println("Le joueur utilise une Holy Elixir pour se soigner !");
+                        player.inventory.remove("Holy Elixir");
                     }
                     break;
 
@@ -147,15 +174,18 @@ public class UpdatePlayer {
                     player.currenthealthpoints+=1;
                     if(player.inventory.contains("Magic Bow")) {
                         player.currenthealthpoints+=player.currenthealthpoints/8-1;
+                        System.out.println("Le joueur utilise son Magic Bow pour se soigner !");
                     }
                     break;
             
                 default:
                     break;
             }
+            System.out.println("Il a maintenant " + player.currenthealthpoints + " points de vie.");
 
         } else if(player.currenthealthpoints >= player.healthpoints) {
             player.currenthealthpoints = player.healthpoints;
+            System.out.println("Le joueur est en pleine forme !");
             return;
         }
     }
